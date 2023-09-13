@@ -27,15 +27,16 @@ function App() {
           <h1>Expense Item!</h1>
         </div>
       </div>
+      <div>
       {items.map((item, index) => (
-        <ExpenseItem
-          key={index}
+        <ExpenseItem          
           expenseTitle={item.expenseTitle}
           expenseAmount={item.expenseAmount}
           expenseDate={item.expenseDate}
           locationOfExpenditure={item.locationOfExpenditure}
         />
       ))}
+      </div>
     </div>
   );
 }
