@@ -1,41 +1,43 @@
-import ExpenseItem from './components/ExpenseItem'; 
+// App.js
+import React from 'react';
+import ExpenseDetails from './components/ExpenseDetails';
 
-import "./components/ExpenseItem.css"
+import './components/ExpenseItem.css'
 
 function App() {
-
-
-
-  const items=[ {expenseDate : new Date(2023, 9, 13),
-     expenseTitle : "Food",
-     expenseAmount : 50,
-     locationOfExpenditure:"Hotel" } ,
-     {expenseDate : new Date(2023, 9, 13),
-      expenseTitle : "Petrol",
-      expenseAmount : 100,
-      locationOfExpenditure:"Petrol Pump" },
-      {expenseDate : new Date(2023, 9, 13),
-        expenseTitle : "Movies",
-        expenseAmount : 200,
-        locationOfExpenditure:"Inox" }
-    ]
+  const expenses = [
+    {
+      id: 'e1',
+      date: new Date(2023, 9, 13),
+      title: "Food",
+      amount: 50,
+      locationOfExpenditure: "Hotel",
+    },
+    {
+      id: 'e2',
+      date: new Date(2023, 9, 13),
+      title: "Petrol",
+      amount: 100,
+      locationOfExpenditure: "Petrol Pump",
+    },
+    {
+      id: 'e3',
+      date: new Date(2023, 9, 13),
+      title: "Movies",
+      amount: 200,
+      locationOfExpenditure: "Inox",
+    }
+  ];
 
   return (
-    <div> 
+    <div>
       <div className="expense-item">
         <div className="expense-item__description">
           <h1>Expense Item!</h1>
         </div>
       </div>
       <div>
-      {items.map((item, index) => (
-        <ExpenseItem          
-          expenseTitle={item.expenseTitle}
-          expenseAmount={item.expenseAmount}
-          expenseDate={item.expenseDate}
-          locationOfExpenditure={item.locationOfExpenditure}
-        />
-      ))}
+        <ExpenseDetails expenses={expenses} />
       </div>
     </div>
   );
