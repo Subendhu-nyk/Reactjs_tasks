@@ -1,10 +1,10 @@
 // App.js
 import React from 'react';
-import ExpenseDetails from './components/ExpenseDetails';
+import ExpenseDetails from './components/Expenses/ExpenseDetails';
 
-import './components/ExpenseItem.css'
+import './components/Expenses/ExpenseItem.css'
 
-function App() {
+const App=()=> {
   const expenses = [
     {
       id: 'e1',

@@ -1,11 +1,11 @@
 
 import React from "react";
 import "./ExpenseDetails.css";
-import Card from './card';
+import Card from '../UI/card';
 import ExpenseItem from "./ExpenseItem";
 
 
-function ExpenseDetails(props) {
+const ExpenseDetails=(props)=> {
   return (   
     <Card className="expenses">
         {props.expenses.map((expense, index) => (
