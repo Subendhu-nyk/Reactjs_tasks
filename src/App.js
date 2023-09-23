@@ -15,20 +15,20 @@ const App=()=> {
       amount: 50,
       locationOfExpenditure: "Hotel",
     },
-    {
-      id: 'e2',
-      date: new Date(2023, 9, 13),
-      title: "Petrol",
-      amount: 100,
-      locationOfExpenditure: "Petrol Pump",
-    },
-    {
-      id: 'e3',
-      date: new Date(2023, 9, 13),
-      title: "Movies",
-      amount: 200,
-      locationOfExpenditure: "Inox",
-    }
+    // {
+    //   id: 'e2',
+    //   date: new Date(2023, 9, 13),
+    //   title: "Petrol",
+    //   amount: 100,
+    //   locationOfExpenditure: "Petrol Pump",
+    // },
+    // {
+    //   id: 'e3',
+    //   date: new Date(2023, 9, 13),
+    //   title: "Movies",
+    //   amount: 200,
+    //   locationOfExpenditure: "Inox",
+    // }
   ];
   const [expense, setExpense] = useState(expenses);
 
