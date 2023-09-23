@@ -1,5 +1,6 @@
 // App.js
-import React from 'react';
+import React,{useState} from 'react';
+
 import ExpenseDetails from './components/Expenses/ExpenseDetails';
 import NewExpense from './components/NewExpense/NewExpense';
  
@@ -29,6 +30,15 @@ const App=()=> {
       locationOfExpenditure: "Inox",
     }
   ];
+  const [expense, setExpense] = useState(expenses);
+
+  const addExpenseHandler=(expense)=>{
+    setExpense((prevExpense)=>{
+      return[...prevExpense,expense];
+    })
+    console.log('in App.js')
+    console.log(expense)
+  }
 
   return (
     <div>
@@ -38,8 +48,8 @@ const App=()=> {
         </div>
       </div>
       <div>
-        <NewExpense/>
-        <ExpenseDetails expenses={expenses} />
+        <NewExpense onAddExpense={addExpenseHandler}/>
+        <ExpenseDetails expenses={expense} />
       </div>
     </div>
   );

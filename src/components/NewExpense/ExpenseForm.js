@@ -2,11 +2,11 @@ import React,{useState} from "react";
  
 import './ExpenseForm.css' 
 
-function ExpenseForm(){
+function ExpenseForm(props){
 
-    const[item,setItem]=useState('')
-    const [loc,setLoc]=useState('')
-    const [amt,setAmt]=useState('')
+    const[title,setTitle]=useState('')
+    const [locationOfExpenditure,setLocationOfExpenditure]=useState('')
+    const [amount,setAmount]=useState('')
     const [date,setDate]=useState('')
     // const [userInput,setUserInput]=useState({
     //     enteredItem:"",
@@ -15,7 +15,7 @@ function ExpenseForm(){
     //     enteredDate:""
     // })
     const onclickHandler1=(event)=>{
-        setItem(event.target.value)
+        setTitle(event.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredItem:event.target.value,
@@ -26,7 +26,7 @@ function ExpenseForm(){
         // })
     }
     const onclickHandler2=(event)=>{
-        setLoc(event.target.value)
+        setLocationOfExpenditure(event.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredLoc:event.target.value,
@@ -37,7 +37,7 @@ function ExpenseForm(){
         //  })
     }
     const onclickHandler3=(event)=>{
-        setAmt(event.target.value)
+        setAmount(event.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredAmount:event.target.value,
@@ -58,12 +58,12 @@ function ExpenseForm(){
     const submitForm=(event)=>{
         event.preventDefault();
         const expenseData={
-            item,loc,amt,date:new Date(date)
+            title,locationOfExpenditure,amount,date:new Date(date)
         }
-       console.log(expenseData)
-       setItem('')
-       setLoc('')
-       setAmt('')
+       props.onSaveExpenseData(expenseData);
+       setTitle('')
+       setLocationOfExpenditure('')
+       setAmount('')
        setDate('')
     }
 
@@ -74,15 +74,15 @@ function ExpenseForm(){
             <div className="new-expense__controls">
             <div className="new-expense__control">
             <label>Expense Item</label>
-            <input value={item} onChange={onclickHandler1} type="text"/>
+            <input value={title} onChange={onclickHandler1} type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Expenditure Location</label>
-            <input value={loc} onChange={onclickHandler2} type="text"/>
+            <input value={locationOfExpenditure} onChange={onclickHandler2} type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Expense Amount</label>
-            <input value={amt} onChange={onclickHandler3}  type="text"/>
+            <input value={amount} onChange={onclickHandler3}  type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Date</label>
