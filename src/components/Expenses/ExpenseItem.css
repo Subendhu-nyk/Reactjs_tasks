@@ -34,6 +34,15 @@
   padding: 0.5rem;
   border-radius: 12px;
 }
+.expense-item__delete {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: 1px solid white;
+  padding: 0.7rem;
+  border-radius: 12px;
+}
 
 @media (min-width: 580px) {
   .expense-item__description {
