@@ -61,6 +61,10 @@ function ExpenseForm(){
             item,loc,amt,date:new Date(date)
         }
        console.log(expenseData)
+       setItem('')
+       setLoc('')
+       setAmt('')
+       setDate('')
     }
 
 
@@ -70,19 +74,19 @@ function ExpenseForm(){
             <div className="new-expense__controls">
             <div className="new-expense__control">
             <label>Expense Item</label>
-            <input onChange={onclickHandler1} type="text"/>
+            <input value={item} onChange={onclickHandler1} type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Expenditure Location</label>
-            <input onChange={onclickHandler2} type="text"/>
+            <input value={loc} onChange={onclickHandler2} type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Expense Amount</label>
-            <input onChange={onclickHandler3}  type="text"/>
+            <input value={amt} onChange={onclickHandler3}  type="text"/>
             </div>
             <div className="new-expense__control">
             <label>Date</label>
-            <input  type="date" min="2023-09-09" max="2024-12-31" onChange={onclickHandler4}/>
+            <input value={date} type="date" min="2023-09-09" max="2024-12-31" onChange={onclickHandler4}/>
             </div>           
             </div>
             <div className="new-expense__actions">
