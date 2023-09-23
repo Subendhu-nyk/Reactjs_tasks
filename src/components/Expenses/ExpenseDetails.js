@@ -4,6 +4,7 @@ import "./ExpenseDetails.css";
 import Card from '../UI/card';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpenseList';
+import ExpensesChart from './ExpensesChart';
 // import ExpenseItem from "./ExpenseItem";
 
 
@@ -32,6 +33,7 @@ const ExpenseDetails=(props)=> {
 
         />
       ))} */}
+       <ExpensesChart expenses={filteredExpenses} />
       <ExpensesList items={filteredExpenses} />
     </Card>
   );
